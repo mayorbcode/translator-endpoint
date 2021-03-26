@@ -51,7 +51,7 @@ app.use((req, res) => {
   res.send('404 File not found');
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, (err) => {
   if (err) console.log(err);
