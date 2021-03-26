@@ -14,6 +14,10 @@ app.use(cors());
 // enable reading of json
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Hello World');
+})
+
 app.post('/translate', (req, res) => {
   console.log(req.headers);
   // console.log(req.query);
