@@ -19,7 +19,6 @@ app.get('/', (req, res) => {
 })
 
 app.post('/translate', (req, res) => {
-  console.log(req.headers);
   var endpoint = "https://api.cognitive.microsofttranslator.com";
   axios({
       baseURL: endpoint,
