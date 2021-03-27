@@ -20,18 +20,14 @@ app.get('/', (req, res) => {
 
 app.post('/translate', (req, res) => {
   console.log(req.headers);
-  // console.log(req.query);
-  // console.log(req.body);
-  // const params = req.query;
-  // const info = req.body;
   var endpoint = "https://api.cognitive.microsofttranslator.com";
   axios({
       baseURL: endpoint,
       url: '/translate',
       method: 'post',
       headers: {
-          'Ocp-Apim-Subscription-Key': req.headers['key'],
-          'Ocp-Apim-Subscription-Region': req.headers['location'],
+          'Ocp-Apim-Subscription-Key': process.env.subscriptionKey,
+          'Ocp-Apim-Subscription-Region': process.env.location,
           'Content-type': 'application/json',
           'X-ClientTraceId': uuidv4().toString()
       },
